@@ -1,0 +1,6 @@
+1. Whitespace indentation is used to denote structure
+2. Comments begin with the number sign (#)
+3. List members are denoted by a leading hyphen (-) with one member per line,
+4. Associative arrays are represented using the colon space (: ) in the form key: value, one per line
+5. Strings (scalars) are ordinarily unquoted, but may be enclosed in double-quotes ("), or single-quotes (').
+6. 

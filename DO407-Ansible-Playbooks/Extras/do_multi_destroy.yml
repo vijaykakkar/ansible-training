@@ -1,0 +1,24 @@
+---
+- name: testing DO
+  hosts: digitalocean
+  vars:
+    do_token: de55d095648957ccc6f94f30efea0c206e4aa463bc16f29cf3a98ea2542292c7
+    droplets:
+    - droplet1
+    - droplet2
+    - droplet3
+    - droplet4
+  tasks:
+  - name: ensure droplet one exists
+    digital_ocean: 
+      state: absent
+      command: droplet
+      name: "{{ item }}"
+      unique_name: yes
+      size_id: 512mb
+      region_id: sgp1
+      image_id: ubuntu-14-04-x64
+      api_token: "{{ do_token }}"
+    with_items: "{{ droplets }}"
+    register: droplet_one
+      
